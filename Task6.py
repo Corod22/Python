@@ -9,3 +9,17 @@
 
 #385916 -> yes
 #123456 -> no
+print("Введите 6 значный номер билета")
+numberTicket=int(input())
+n1=numberTicket//100000
+n2=numberTicket//10000%10
+n3=numberTicket//1000%10
+n4=numberTicket//100%10
+n5=numberTicket//10%10
+n6=numberTicket%10
+nPerv=n1+n2+n3
+nPosl=n4+n5+n6
+if nPerv==nPosl:
+    print(f"Билет с номером {numberTicket} счастливый")
+else:
+    print(f"Билет с номером {numberTicket} не счастливый")
