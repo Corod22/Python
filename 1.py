@@ -1,13 +1,30 @@
-N = abs(int(input('Введите число N ')))
-stop = 0
-P = 2
-for i in range(N):
-    if stop != 1:
-        P = P ** i
-        if P <= N:
-            print(P, end=' ')
-            P = 2
-        else:
-            stop = 1
-    else:
-        i = N
+# N = abs(int(input('Введите число N ')))
+# stop = 0
+# P = 2
+# for i in range(N):
+#     if stop != 1:
+#         P = P ** i
+#         if P <= N:
+#             print(P, end=' ')
+#             P = 2
+#         else:
+#             stop = 1
+#     else:
+#         i = N
+def rhythm(str):
+    str = str.split()
+    list_1 = []
+    for word in str:
+        sum_w = 0
+        for i in word:
+            if i in 'аеёиоуыэюя':
+                sum_w += 1
+        list_1.append(sum_w)
+    return len(list_1) == list_1.count(list_1[0])
+
+
+str_1 = 'пара-ра-рам рам-пам-папам па-ра-па-дам'
+if rhythm(str_1):
+    print('Парам пам-пам')
+else:
+    print('Пам парам')
